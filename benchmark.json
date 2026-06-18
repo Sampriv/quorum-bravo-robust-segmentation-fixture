@@ -1,0 +1,33 @@
+{
+  "id": "bm_b8deda0d469faa62",
+  "title": "BRAVO Robust Segmentation Fixture",
+  "description": "ECCV uncertainty-workshop BRAVO segmentation starter with a deterministic tiny corruption fixture. Maximize mean IoU.",
+  "objective": "max",
+  "runnerKind": "repo-command",
+  "upstream": {
+    "url": "https://uncertainty-cv.github.io/2024/challenge/",
+    "ref": "eccv-2024-public-challenge"
+  },
+  "editablePaths": [
+    "predict.py",
+    "fixtures"
+  ],
+  "setupCommand": [
+    "bash",
+    "-lc",
+    "python3 --version"
+  ],
+  "benchmarkCommand": [
+    "bash",
+    "-lc",
+    "python3 benchmark.py"
+  ],
+  "scorePath": "score.json",
+  "scoreSchema": {
+    "score": "mean_iou",
+    "miou": "number in [0,1]",
+    "valid": "boolean"
+  },
+  "submit": "/api/benchmarks/bm_b8deda0d469faa62/commit",
+  "apiUrl": "https://quorum-fail-k91q6wslu-samprivs-projects.vercel.app"
+}
